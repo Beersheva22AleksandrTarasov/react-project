@@ -1,0 +1,20 @@
+{
+    
+    "minPrice": 5,
+    "maxPrice": 300,
+   
+    "maxYear": 2003,
+    "minYear": 1950,
+    "minRandomQuantity": 1,
+    "maxRandomQuantity": 50,
+    "category": [
+        "Cookies", "Pipe", "Bread", "Pancakes", "Cheesecakes"
+    ],
+    "unit": [
+        "100 g", "200 g", "500 g", "1 kg", "2 kg"
+    ],
+    "status": [
+        "created", "in progress", "delivered", "canceled"
+    ]
+    
+}
