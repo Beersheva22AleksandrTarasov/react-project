@@ -1,20 +1,19 @@
 {
     
-    "minPrice": 5,
-    "maxPrice": 300,
+    "minPrice": 10,
+    "maxPrice": 200,
    
-    "maxYear": 2003,
-    "minYear": 1950,
+    "maxYear": 0,
+    "minYear": 0,
     "minRandomQuantity": 1,
     "maxRandomQuantity": 50,
     "category": [
         "Macaron", "Filled cookie", "Oatmeal cookie", "Honey-cookie"
+    ],"status": [
+        "created", "in progress", "delivered", "cancelled"
     ],
     "unit": [
         "1 unit", "1 package(250g)", "1 package(500g)", "1 package(1000g)"
-    ],
-    "status": [
-        "created", "in progress", "delivered", "cancelled"
     ]
     
 }

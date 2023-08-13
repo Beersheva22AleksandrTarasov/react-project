@@ -17,10 +17,7 @@ import CartItem from "../../model/CartItem";
 import Order from "../../model/Order";
 import OrderCard from "../cards/OrderCard";
 const columnsCommon: GridColDef[] = [
-    // {
-    //     field: 'serial', headerName: '#', flex: 0.3, headerClassName: 'data-grid-header',
-    //     align: 'center', headerAlign: 'center'
-    // },
+    
     {
         field: 'id', headerName: 'ID', flex: 0.3, headerClassName: 'data-grid-header',
         align: 'center', headerAlign: 'center'
@@ -95,9 +92,7 @@ const columnsCommon: GridColDef[] = [
         headerAlign: 'center',
         renderCell: (params) => <img src={params.value} alt="product" width="50" height="50" />,
     },
-
    ]
-   
    
 const style = {
     position: 'absolute' as 'absolute',
@@ -118,9 +113,7 @@ const Orders: React.FC = () => {
         {
             field: 'actions', type: "actions", getActions: (params) => {
                 return [
-                    // <GridActionsCellItem label="remove" icon={<AddCircleOutline />}
-                    //     onClick={() => updateQuantity(params.row, 1)
-                    //     } />,
+                    
                     <GridActionsCellItem label="details" icon={<InventoryOutlined />}
                         
                         onClick={() => {
@@ -133,17 +126,6 @@ const Orders: React.FC = () => {
                         setCanceledStatus(orderDetails);
 
                     } }/>
-                    // <GridActionsCellItem label="update" icon={<Edit />}
-                    //     onClick={() => {
-                    //         employeeId.current = params.id as any;
-                    //         if (params.row) {
-                    //             const empl = params.row;
-                    //             empl && (employee.current = empl);
-                    //             setFlEdit(true)
-                    //         }
-    
-                    //     }
-                    //     } />
                 ]
             }
         }
@@ -152,9 +134,7 @@ const Orders: React.FC = () => {
         {
             field: 'actions', type: "actions", getActions: (params) => {
                 return [
-                    // <GridActionsCellItem label="remove" icon={<AddCircleOutline />}
-                    //     onClick={() => updateQuantity(params.row, 1)
-                    //     } />,
+                    
                     <GridActionsCellItem label="details" icon={<InventoryOutlined />}
                         
                         onClick={() => {
@@ -168,17 +148,6 @@ const Orders: React.FC = () => {
                         setEditOrder(true);
                         
                     } }/>
-                    // <GridActionsCellItem label="update" icon={<Edit />}
-                    //     onClick={() => {
-                    //         employeeId.current = params.id as any;
-                    //         if (params.row) {
-                    //             const empl = params.row;
-                    //             empl && (employee.current = empl);
-                    //             setFlEdit(true)
-                    //         }
-    
-                    //     }
-                    //     } />
                 ]
             }
         }
@@ -298,7 +267,7 @@ const Orders: React.FC = () => {
             const orderDetails = order.current;
                         setCanceledStatus(orderDetails);
         }
-        //setFlDetails(false)
+        
     }
     async function updateQuantity (empl:any, newQuant:number): Promise<void> {
         const quantity= empl.quantity || 0;
@@ -318,7 +287,6 @@ const Orders: React.FC = () => {
     dispatch(errorMessage, '');
     }
     
-    // function getDataGridContent (employees:Employee[], cartProducts:Employee[]):CartItem[] {
     const cartContent: CartItem[] = cartProducts.map(e => {
         const employee = employees.find(el => el.id == e.id);
             return {...e, 
@@ -331,8 +299,6 @@ const Orders: React.FC = () => {
                 sum: ((employees.find(el => el.id == e.id)?.price)||0) * (e.quantity||0)}
         });
         let totalSum = cartProducts.length === 0 ? 0: cartContent.map(e => e.sum || 0).reduce((acc,cur) => acc + cur);
-        // return res;
-    // }
 
     function createOrderFn():void {
         ordersService.addOrder(cartContent, "Beer-Sheva", "0551112222", totalSum, userData?.email);
@@ -401,13 +367,7 @@ const Orders: React.FC = () => {
             display: 'flex', flexDirection: "col", justifyContent: 'right',
             alignContent: 'center', gap: '2vw'
         }}>
-            {/* <Box sx={{ justifyContent: 'center', alignContent: 'center' }}>
-                <div style={{ marginTop: "0.5vh", fontSize: "larger", fontWeight: "bold" }}>
-                    Total Sum: {totalSum}
-                </div>
-            </Box>
-            <Button style={{ textAlign: 'center', fontWeight: "bold", fontSize: "larger", justifyContent: 'center', height: '5vh' }}
-                onClick={() => createOrderFn()}>Order Now</Button>; */}
+            {}
         </Box>
         <Confirmation confirmFn={confirmFn.current} open={openConfirm}
             title={title.current} content={content.current}></Confirmation>

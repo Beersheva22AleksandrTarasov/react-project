@@ -27,7 +27,7 @@ const MIN_ID = 1;
 const MAX_ID = 1000000;
 
 function convertEmployee(empl: Product, id?: string): any {
-    const res: any = { ...empl, id: id ? id : empl.id/*, birthDate: getISODateStr(empl.birthDate)*/ };
+    const res: any = { ...empl, id: id ? id : empl.id };
     return res;
 }
 function getErrorMessage(firestoreError: FirestoreError): string {
@@ -52,8 +52,6 @@ while (this.userDataJson === "") {
 }
 }
 
-
-    //userData = useSelectorAuth();
     cartId:string = getRandomInt(MIN_ID, MAX_ID).toString();
     collectionCartRef: CollectionReference = collection(getFirestore(appFirebase), `users/${this.cartId}/cart`);
     collectionOrdersRef: CollectionReference = collection(getFirestore(appFirebase), 'orders');
@@ -188,7 +186,6 @@ while (this.userDataJson === "") {
         if (!order.id || !(await this.orderExists(id))) {
             throw 'not found';
         }
-        //const employee = convertEmployee(order);
         const docRef = this.getOrderDocRef(id);
         try {
             await setDoc(docRef, order);

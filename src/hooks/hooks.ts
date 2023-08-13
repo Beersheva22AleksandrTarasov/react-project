@@ -39,7 +39,7 @@ export function useSelectorEmployees() {
                     if (typeof emplArray === 'string') {
                         errorMessage = emplArray;
                     } else {
-                        setEmployees(emplArray/*.map(e => e /*({ ...e, birthDate: new Date(e.birthDate) }))*/);
+                        setEmployees(emplArray);
                     }
                     dispatch(errorMessage, '');
 
@@ -61,7 +61,7 @@ export function useSelectorCart() {
                     if (typeof cartItems === 'string') {
                         errorMessage = cartItems;
                     } else {
-                        setcartProducts(cartItems/*.map(e => e /*({ ...e, birthDate: new Date(e.birthDate) }))*/);
+                        setcartProducts(cartItems);
                     }
                     dispatch(errorMessage, '');
 

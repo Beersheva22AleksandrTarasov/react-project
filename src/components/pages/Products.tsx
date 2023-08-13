@@ -41,10 +41,9 @@ const columnsCommon: GridColDef[] = [
     {
         field: 'imageLink', headerName: 'Image', flex: 0.9, headerClassName: 'data-grid-header',
         align: 'center', headerAlign: 'center', renderCell: params => {
-            return <img src={params.value} alt="product image" width="50vw"/*{params.value}*//>
+            return <img src={params.value} alt="product image" width="50vw"/>
         }
     },
- 
    ];
    
    

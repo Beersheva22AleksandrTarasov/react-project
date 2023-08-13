@@ -18,9 +18,6 @@ const SignUp: React.FC = () => {
         try {
             const res: UserData = await authService.addNewUser(loginData);
             res && dispatch(authActions.set(res));
-            // if (res?.role === 'user') {
-            //     const userCartService = new OrdersServiceFire();
-            // }
             inputResult = {status: res ? 'success' : 'error',
             message: res ? '' : 'Unuinque email, please enter another email'}
             

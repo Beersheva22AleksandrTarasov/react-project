@@ -210,16 +210,7 @@ const ProductEditor: React.FC = () => {
                 <ProductForm submitFn={updateProduct} productUpdated={product.current} />
             </Box>
         </Modal>
-        {/* <Modal
-            open={openDetails}
-            onClose={() => setFlDetails(false)}
-            aria-labelledby="modal-modal-title"
-            aria-describedby="modal-modal-description"
-        >
-            <Box sx={style}>
-                <EmployeeCard actionFn={cardAction} product={product.current!} />
-            </Box>
-        </Modal> */}
+        {}
         </Box>
 }
 export default ProductEditor;
