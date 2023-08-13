@@ -5,9 +5,7 @@ import { getFirestore, collection, getDoc, doc, setDoc, FirestoreError } from "f
 import { AuthProvider, GoogleAuthProvider, TwitterAuthProvider, createUserWithEmailAndPassword, getAuth, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
 import appFirebase from "../../config/firebase-config";
 const mapProviders: Map<string, AuthProvider> = new Map([
-    ['GOOGLE', new GoogleAuthProvider()],
-    // ['TWITER', new TwitterAuthProvider()]
-
+    ['GOOGLE', new GoogleAuthProvider()]
 ])
 function getErrorMessage(firestoreError: FirestoreError): string {
     let errorMessage = '';

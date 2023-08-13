@@ -11,8 +11,6 @@ import { RouteType } from "./components/navigator/Navigator";
 import UserData from "./model/UserData";
 import ProductEditor from "./components/pages/ProductEditor";
 import AddProduct from "./components/pages/AddProduct";
-import AgeStatistics from "./components/pages/AgeStatistics";
-import SalaryStatistics from "./components/pages/SalaryStatistics";
 import { StatusType } from "./model/StatusType";
 import CodeType from "./model/CodeType";
 import { useDispatch } from "react-redux";
@@ -20,7 +18,6 @@ import { authActions } from "./redux/slices/authSlice";
 import { authService, productService } from "./config/service-config";
 import { Alert, Snackbar } from "@mui/material";
 import { codeActions } from "./redux/slices/codeSlice";
-import Generation from "./components/pages/Generation";
 import process from "process";
 import Products from "./components/pages/Products";
 import Cart from "./components/pages/Cart";
@@ -85,14 +82,10 @@ const App: React.FC = () => {
         <Route path="employees/add" element={<AddProduct/>}/>
         <Route path="/cart" element={<Cart/>}/>
         <Route path="/orders" element={<Orders/>}/>
-        <Route path="statistics/age" element={<AgeStatistics/>}/>
-        <Route path="statistics/salary" 
-        element={<SalaryStatistics/>}/>
         
         <Route path="signin" element={<SignIn/>}/>
         <Route path="signUp" element={<SignUp/>}/>
         <Route path="signout" element={<SignOut/>}/>
-        <Route path="generation" element={<Generation/>}/>
         <Route path="/*" element={<NotFound/>}/>
     </Route>
   </Routes>
