@@ -83,7 +83,7 @@ export function useSelectorOrders() {
                     if (typeof orderArray === 'string') {
                         errorMessage = orderArray;
                     } else {
-                        setOrders(orderArray/*.map(e => e /*({ ...e, birthDate: new Date(e.birthDate) }))*/);
+                        setOrders(orderArray);
                     }
                     dispatch(errorMessage, '');
 

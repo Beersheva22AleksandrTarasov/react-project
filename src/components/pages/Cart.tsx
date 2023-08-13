@@ -14,10 +14,6 @@ import CartItemCard from "../cards/CartItemCard";
 import UserData from "../../model/UserData";
 import CartItem from "../../model/CartItem";
 const columnsCommon: GridColDef[] = [
-    // {
-    //     field: 'serial', headerName: '#', flex: 0.3, headerClassName: 'data-grid-header',
-    //     align: 'center', headerAlign: 'center'
-    // },
     {
         field: 'id', headerName: 'ID', flex: 0.3, headerClassName: 'data-grid-header',
         align: 'center', headerAlign: 'center'
@@ -99,17 +95,6 @@ const Cart: React.FC = () => {
                     <GridActionsCellItem label="remove" icon={<DeleteOutline />}
                         onClick={() => removeCartItem(params.id)
                         } />,
-                    // <GridActionsCellItem label="update" icon={<Edit />}
-                    //     onClick={() => {
-                    //         employeeId.current = params.id as any;
-                    //         if (params.row) {
-                    //             const empl = params.row;
-                    //             empl && (employee.current = empl);
-                    //             setFlEdit(true)
-                    //         }
-    
-                    //     }
-                    //     } />
                 ] ;
             }
         }

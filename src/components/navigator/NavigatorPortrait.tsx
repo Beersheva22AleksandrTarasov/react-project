@@ -33,10 +33,10 @@ const NavigatorPortrait: React.FC<{routes: RouteType[]}> = ({ routes }) => {
     }
     return <Box sx={{ marginTop: { xs: "15vh", sm: "20vh" }}}>
         <AppBar position="fixed">
-            <Toolbar style={{backgroundColor:"#7d0000"}} ><IconButton onClick={toggleOpen} sx={{ color: 'white', backgroundColor: '#7d0000' }}>
+            <Toolbar style={{backgroundColor:"#b15e3a"}} ><IconButton onClick={toggleOpen} sx={{ color: 'white', backgroundColor: '#b15e3a' }}>
                 <Menu />
             </IconButton>
-                <Typography sx={{ width: "100%", textAlign: "center", fontSize: "1.5em", backgroundColor: '#7d0000'  }}>
+                <Typography sx={{ width: "100%", textAlign: "center", fontSize: "1.5em", backgroundColor: '#b15e3a'  }}>
                     {getTitle()}
                 </Typography>
                 <Drawer open={flOpen} onClose={toggleOpen} anchor="left" >
@@ -45,11 +45,11 @@ const NavigatorPortrait: React.FC<{routes: RouteType[]}> = ({ routes }) => {
                     </List>
                 </Drawer></Toolbar>
         </AppBar>
-        <Box display="flex" flexDirection="row" justifyContent="center" alignContent="center" marginBottom='2vh'>
-        <Box  sx={{width: {xs:"40vw", sm:"10vw"}}}   >
-            <img src="/images/shoplogo.png" alt="" width="75%" />
+        <Box display="flex" flexDirection="row" justifyContent="center" alignContent="center" marginBottom='3vh'>
+        <Box  sx={{width: {xs:"50vw", sm:"10vw"}}}   >
+            <img src="/images/shoplogo.png" alt="" width="100%" />
         </Box>
-        <Typography sx={{fontSize: {xs:"200%", sm:"200%"}}}  color='gray' alignContent='center'>Cookies Shop</Typography>
+        <Typography sx={{fontSize: {xs:"200%", sm:"200%"}}}  color='gray' alignContent='center'></Typography>
         </Box>
         <Outlet></Outlet>
     </Box>

@@ -1,7 +1,6 @@
 import { AppBar, Box, Tab, Tabs, Typography } from '@mui/material';
 import { ReactNode, useEffect, useState } from 'react';
 import { Link, NavLink, Outlet, useLocation, useNavigate} from 'react-router-dom'
-//import shopLogo from 'images/shoplogo.png'
 export type RouteType = {
   order: any;
     to: string, label: string
@@ -28,15 +27,15 @@ const Navigator: React.FC<{ routes: RouteType[] }> = ({routes}) => {
     
     return <Box mt={10}>
         <AppBar >
-            <Tabs value={value <routes.length ? value : 0} onChange={onChangeFn} style={{backgroundColor:'#ffe5e5', }}>
+            <Tabs value={value <routes.length ? value : 0} onChange={onChangeFn} style={{backgroundColor:'#f5f5dc', }}>
                 {getTabs()}       
             </Tabs>
         </AppBar>
         <Box display="flex" flexDirection="row" justifyContent="center" alignContent="center" marginBottom='3vh'>
-        <Box width='15vw' >
-            <img src="/images/shoplogo.png" alt="" width="100%" />
+        <Box width='25vw' >
+            <img src="/images/shoplogo.png" alt="" width="125%" />
         </Box>
-        <Typography variant='h2' color='black' alignContent='center'>COOKIES</Typography>
+        <Typography variant='h2' color='black' alignContent='center'></Typography>
         </Box>
         <Outlet></Outlet>
         

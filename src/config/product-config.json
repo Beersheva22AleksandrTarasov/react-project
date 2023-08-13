@@ -8,13 +8,13 @@
     "minRandomQuantity": 1,
     "maxRandomQuantity": 50,
     "category": [
-        "Cookies", "Pipe", "Bread", "Pancakes", "Cheesecakes"
+        "Macaron", "Filled cookie", "Oatmeal cookie", "Honey-cookie"
     ],
     "unit": [
-        "100 g", "200 g", "500 g", "1 kg", "2 kg"
+        "1 unit", "1 package(250g)", "1 package(500g)", "1 package(1000g)"
     ],
     "status": [
-        "created", "in progress", "delivered", "canceled"
+        "created", "in progress", "delivered", "cancelled"
     ]
     
 }
