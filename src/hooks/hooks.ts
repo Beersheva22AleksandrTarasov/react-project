@@ -27,7 +27,7 @@ export function useDispatchCode() {
         dispatch(codeActions.set({ code, message: message || successMessage }))
     }
 }
-export function useSelectorEmployees() {
+export function useSelectorProducts() {
     const dispatch = useDispatchCode();
     const [employees, setEmployees] = useState<Product[]>([]);
     useEffect(() => {

@@ -10,7 +10,7 @@ import { useSelectorAuth } from "../../redux/store";
 import { Confirmation } from "../common/Confirmation";
 import { ProductForm } from "../forms/ProductForm";
 import InputResult from "../../model/InputResult";
-import { useDispatchCode, useSelectorEmployees } from "../../hooks/hooks";
+import { useDispatchCode, useSelectorProducts } from "../../hooks/hooks";
 import CartItemCard from "../cards/CartItemCard";
 import UserData from "../../model/UserData";
 const columnsCommon: GridColDef[] = [
@@ -109,7 +109,7 @@ const ProductEditor: React.FC = () => {
        ]
     const dispatch = useDispatchCode();
     const userData = useSelectorAuth();
-    const products = useSelectorEmployees();
+    const products = useSelectorProducts();
     const theme = useTheme();
     const isPortrait = useMediaQuery(theme.breakpoints.down('sm'));
     const columns = useMemo(() => getColumns(), [userData, products, isPortrait]);
@@ -137,8 +137,8 @@ const ProductEditor: React.FC = () => {
     }
     function removeEmployee(id: any) {
         title.current = "Remove Employee object?";
-        const employee = products.find(empl => empl.id == id);
-        content.current = `You are going remove employee with id ${employee?.id}`;
+        const product = products.find(prod => prod.id == id);
+        content.current = `You are going remove employee with id ${product?.id}`;
         productId.current = id;
         confirmFn.current = actualRemove;
         setOpenConfirm(true);

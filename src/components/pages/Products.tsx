@@ -7,7 +7,7 @@ import { Delete, Details, Edit, Man, Visibility, Woman, AddShoppingCartOutlined,
 import { useSelectorAuth } from "../../redux/store";
 import { Confirmation } from "../common/Confirmation";
 import { ProductForm } from "../forms/ProductForm";
-import { useDispatchCode, useSelectorCart, useSelectorEmployees as useSelectorProducts, useSort } from "../../hooks/hooks";
+import { useDispatchCode, useSelectorCart, useSelectorProducts as useSelectorProducts, useSort } from "../../hooks/hooks";
 import EmployeeCard from "../cards/CartItemCard";
 import UserData from "../../model/UserData";
 import productConfig from "../../config/product-config.json"

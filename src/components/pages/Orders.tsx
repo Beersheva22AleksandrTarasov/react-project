@@ -10,7 +10,7 @@ import { useSelectorAuth } from "../../redux/store";
 import { Confirmation } from "../common/Confirmation";
 import { ProductForm } from "../forms/ProductForm";
 import InputResult from "../../model/InputResult";
-import { useDispatchCode, useSelectorCart, useSelectorEmployees, useSelectorOrders } from "../../hooks/hooks";
+import { useDispatchCode, useSelectorCart, useSelectorProducts, useSelectorOrders } from "../../hooks/hooks";
 import CartItemCard from "../cards/CartItemCard";
 import UserData from "../../model/UserData";
 import CartItem from "../../model/CartItem";
@@ -178,7 +178,7 @@ const Orders: React.FC = () => {
     const dispatch = useDispatchCode();
     const userData = useSelectorAuth();
     const cartProducts = useSelectorCart();
-    const employees = useSelectorEmployees();
+    const products = useSelectorProducts();
     const ordersData = useSelectorOrders();
     let orders = useSelectorOrders();
     if (userData?.role === 'user') {
@@ -288,7 +288,7 @@ const Orders: React.FC = () => {
     }
     
     const cartContent: CartItem[] = cartProducts.map(e => {
-        const employee = employees.find(el => el.id == e.id);
+        const employee = products.find(el => el.id == e.id);
             return {...e, 
                 category: employee?.category,
                 name: employee?.name,
@@ -296,7 +296,7 @@ const Orders: React.FC = () => {
                 unit:employee?.unit,
                 imageLink:employee?.imageLink,
                 price: employee?.price,                
-                sum: ((employees.find(el => el.id == e.id)?.price)||0) * (e.quantity||0)}
+                sum: ((products.find(el => el.id == e.id)?.price)||0) * (e.quantity||0)}
         });
         let totalSum = cartProducts.length === 0 ? 0: cartContent.map(e => e.sum || 0).reduce((acc,cur) => acc + cur);
 

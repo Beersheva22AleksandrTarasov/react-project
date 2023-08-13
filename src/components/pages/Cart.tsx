@@ -9,7 +9,7 @@ import { useSelectorAuth } from "../../redux/store";
 import { Confirmation } from "../common/Confirmation";
 import { ProductForm } from "../forms/ProductForm";
 import InputResult from "../../model/InputResult";
-import { useDispatchCode, useSelectorCart, useSelectorEmployees } from "../../hooks/hooks";
+import { useDispatchCode, useSelectorCart, useSelectorProducts } from "../../hooks/hooks";
 import CartItemCard from "../cards/CartItemCard";
 import UserData from "../../model/UserData";
 import CartItem from "../../model/CartItem";
@@ -124,7 +124,7 @@ const Cart: React.FC = () => {
     const dispatch = useDispatchCode();
     const userData = useSelectorAuth();
     const cartItems = useSelectorCart();
-    const employees = useSelectorEmployees();
+    const employees = useSelectorProducts();
     const theme = useTheme();
     const isPortrait = useMediaQuery(theme.breakpoints.down('sm'));
     const columns = useMemo(() => getColumns(), [userData, cartItems, isPortrait]);
