@@ -29,17 +29,17 @@ export function useDispatchCode() {
 }
 export function useSelectorProducts() {
     const dispatch = useDispatchCode();
-    const [employees, setEmployees] = useState<Product[]>([]);
+    const [products, setEmployees] = useState<Product[]>([]);
     useEffect(() => {
 
         const subscription: Subscription = productService.getProducts()
             .subscribe({
-                next(emplArray: Product[] | string) {
+                next(prodArray: Product[] | string) {
                     let errorMessage: string = '';
-                    if (typeof emplArray === 'string') {
-                        errorMessage = emplArray;
+                    if (typeof prodArray === 'string') {
+                        errorMessage = prodArray;
                     } else {
-                        setEmployees(emplArray);
+                        setEmployees(prodArray);
                     }
                     dispatch(errorMessage, '');
 
@@ -47,7 +47,7 @@ export function useSelectorProducts() {
             });
         return () => subscription.unsubscribe();
     }, []);
-    return employees;
+    return products;
 }
 export function useSelectorCart() {
     const dispatch = useDispatchCode();
